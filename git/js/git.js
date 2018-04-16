@@ -1,14 +1,14 @@
 class Git {
 
 	getUser(username, callback) {
-        this.performGetRequest('https://api.github.com/users/' + username, (data) => callback(data));
+        this.get('https://api.github.com/users/' + username, (data) => callback(data));
     }
 
 	getUserRepo(username, callback) {
-        this.performGetRequest('https://api.github.com/users/'+ username + '/repos?per_page=100&page=1', (data) => callback(data));
+        this.get('https://api.github.com/users/'+ username + '/repos?per_page=100&page=1', (data) => callback(data));
     }
 
-    performGetRequest(url, callback) {
+    get(url, callback) {
         const xhttp = new XMLHttpRequest();
 
         xhttp.onreadystatechange = function() {

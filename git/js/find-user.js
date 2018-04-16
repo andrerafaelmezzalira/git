@@ -35,9 +35,9 @@
 				mdlGrid.innerHTML += cell + user.following + ' seguindo' + div;
 				mdlGrid.className = 'mdl-grid';
 
-				demoUserInfo.innerHTML = '<h3>' + user.name + '</h3>';
+				demoUserInfo.innerHTML = '<h3>' + (user.name == null ? 'Nome não fornecido' : user.name) + '</h3>';
 				if (user.avatar_url != null) {
-					demoUserInfo.innerHTML += '<img width="230" height="230" title="' + user.name + '" src="' + user.avatar_url + '"></br>';
+					demoUserInfo.innerHTML += '<img width="230" height="230" title="' + (user.name == null ? 'Nome não fornecido' : user.name) + '" src="' + user.avatar_url + '"></br>';
 				}
 
 				demoUserInfo.innerHTML += '<b>' + (user.bio == null ? 'Não tem biografia :(' : user.bio) + '</b>'
